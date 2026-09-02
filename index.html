@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Báji ♥ pro Báru</title>
+<meta name="description" content="Malý web plný lásky pro Báru.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<noscript><style>.reveal{opacity:1!important;transform:none!important} #gate{display:none!important} #site{display:block!important}</style></noscript>
+</head>
+<body>
+
+<!-- ===================== BRÁNA S HESLEM ===================== -->
+<div id="gate" class="gate">
+  <div class="gate__bg" aria-hidden="true"></div>
+  <div class="gate__overlay" aria-hidden="true"></div>
+
+  <main class="gate__card" role="main">
+    <span class="gate__icon" aria-hidden="true">♥</span>
+    <h1 class="gate__title">Ahoj, Báro</h1>
+    <p class="gate__text">Než se podíváš dál, musíš zodpovědět jednu otázku.</p>
+
+    <form id="gate-form" class="gate__form" autocomplete="off" novalidate>
+      <label for="gate-answer" class="gate__question">
+        Které zvíře je v našem vztahu nejvíce připomínané?
+        <span class="gate__hint">(pes to není 😃)</span>
+      </label>
+      <input
+        type="text"
+        id="gate-answer"
+        name="answer"
+        class="gate__input"
+        placeholder="Tvoje odpověď…"
+        aria-describedby="gate-error"
+        required
+      >
+      <button type="submit" class="gate__button">Odemknout 🔓</button>
+      <p id="gate-error" class="gate__error" role="alert" aria-live="polite"></p>
+    </form>
+  </main>
+</div>
+
+<!-- ===================== HLAVNÍ WEB ===================== -->
+<div id="site" class="site" hidden>
+
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav__logo">Báji ♥</a>
+    <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Otevřít menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav__links" id="nav-links">
+      <a href="#hero">Domů</a>
+      <a href="#pribeh">Příběh</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#dopis">Dopis</a>
+    </div>
+  </nav>
+
+  <!-- HERO S VIDEEM -->
+  <header id="hero" class="hero">
+    <video
+      id="hero-video"
+      class="hero__video"
+      autoplay
+      muted
+      loop
+      playsinline
+      poster="assets/img/couple.jpg"
+    >
+      <source src="assets/video/hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Pro tebe</p>
+      <h1 class="hero__title">Tohle je pro tebe,<br>Báro.</h1>
+      <p class="hero__subtitle">Náš malý svět, poskládaný do jednoho webu.</p>
+      <a href="#pribeh" class="hero__scroll" aria-label="Posunout dolů">
+        <span></span>
+      </a>
+    </div>
+  </header>
+
+  <!-- PŘÍBĚH -->
+  <section id="pribeh" class="story reveal">
+    <div class="story__photo" aria-hidden="true"></div>
+    <div class="story__text">
+      <p class="section__eyebrow">Náš příběh</p>
+      <h2 class="section__title">Jak to celé začalo</h2>
+      <p>
+        Sem přijde váš společný příběh — jak jste se poznali, na co si nejraději
+        vzpomínáte, co vás na sobě baví. Klidně to přepiš vlastními slovy, tohle
+        je jen základ, na kterém můžeš stavět.
+      </p>
+      <p>
+        A jedna vydra si to tu určitě taky zaslouží 🦦 — koneckonců je to naše
+        oficiální vztahové zvíře.
+      </p>
+    </div>
+  </section>
+
+  <!-- GALERIE -->
+  <section id="galerie" class="gallery reveal">
+    <p class="section__eyebrow center">Momenty</p>
+    <h2 class="section__title center">Naše chvíle</h2>
+    <div class="gallery__grid">
+      <figure class="gallery__item" style="--i:0"></figure>
+      <figure class="gallery__item" style="--i:1"></figure>
+      <figure class="gallery__item" style="--i:2"></figure>
+      <figure class="gallery__item" style="--i:3"></figure>
+      <figure class="gallery__item" style="--i:4"></figure>
+      <figure class="gallery__item" style="--i:5"></figure>
+    </div>
+  </section>
+
+  <!-- DOPIS -->
+  <section id="dopis" class="letter reveal">
+    <div class="letter__card">
+      <p class="section__eyebrow center">Pár slov pro tebe</p>
+      <h2 class="section__title center">Milá Báro,</h2>
+      <p class="letter__body">
+        sem napiš pár vět, na kterých ti opravdu záleží. Nemusí to být dlouhé —
+        stačí, aby to bylo upřímné. Tenhle web je jen rámeček; to hlavní jsi ty
+        a to, co si sem doplníš.
+      </p>
+      <p class="letter__signature">Miluju tě. ♥</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Vytvořeno s láskou pro Báru ♥ <span id="year"></span></p>
+  </footer>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
