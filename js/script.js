@@ -76,30 +76,12 @@
 
   function initSiteInteractions() {
     const nav = document.getElementById("nav");
-    const navToggle = document.getElementById("nav-toggle");
-    const navLinks = document.getElementById("nav-links");
-
     if (nav) {
       const onScroll = () => {
         nav.classList.toggle("is-scrolled", window.scrollY > 40);
       };
       onScroll();
       window.addEventListener("scroll", onScroll, { passive: true });
-    }
-
-    if (navToggle && navLinks) {
-      navToggle.addEventListener("click", () => {
-        const isOpen = navLinks.classList.toggle("is-open");
-        navToggle.classList.toggle("is-open", isOpen);
-        navToggle.setAttribute("aria-expanded", String(isOpen));
-      });
-      navLinks.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          navLinks.classList.remove("is-open");
-          navToggle.classList.remove("is-open");
-          navToggle.setAttribute("aria-expanded", "false");
-        });
-      });
     }
 
     const revealEls = document.querySelectorAll(".reveal");

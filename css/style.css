@@ -239,41 +239,6 @@ button { font-family: inherit; cursor: pointer; }
 }
 .nav.is-scrolled .nav__logo { color: var(--color-rose); }
 
-.nav__links {
-  display: flex;
-  gap: 28px;
-}
-.nav__links a {
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: color var(--transition), opacity var(--transition);
-  opacity: 0.9;
-}
-.nav__links a:hover { opacity: 1; color: var(--color-gold); }
-.nav.is-scrolled .nav__links a { color: var(--color-text); }
-.nav.is-scrolled .nav__links a:hover { color: var(--color-rose); }
-
-.nav__toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  width: 40px;
-  height: 40px;
-  background: transparent;
-  border: none;
-  z-index: 600;
-}
-.nav__toggle span {
-  display: block;
-  width: 100%;
-  height: 2px;
-  background: #fff;
-  transition: transform var(--transition), background var(--transition), opacity var(--transition);
-}
-.nav.is-scrolled .nav__toggle span { background: var(--color-text); }
-
 /* ==========================================================
    HERO
    ========================================================== */
@@ -324,33 +289,6 @@ button { font-family: inherit; cursor: pointer; }
   opacity: 0.92;
   max-width: 32ch;
   margin: 0 auto;
-}
-
-.hero__scroll {
-  position: absolute;
-  left: 50%;
-  bottom: 28px;
-  transform: translateX(-50%);
-  width: 26px;
-  height: 42px;
-  border: 2px solid rgba(255,255,255,0.7);
-  border-radius: 999px;
-}
-.hero__scroll span {
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  width: 4px;
-  height: 4px;
-  margin-left: -2px;
-  background: #fff;
-  border-radius: 50%;
-  animation: scrollDot 1.8s ease-in-out infinite;
-}
-@keyframes scrollDot {
-  0% { opacity: 1; top: 8px; }
-  70% { opacity: 0; top: 24px; }
-  100% { opacity: 0; top: 24px; }
 }
 
 /* ==========================================================
@@ -453,33 +391,6 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 0.85rem;
   color: var(--color-text-soft);
   background: var(--color-cream);
-}
-
-/* ==========================================================
-   MOBIL — navigace
-   ========================================================== */
-@media (max-width: 720px) {
-  .nav__toggle { display: flex; }
-
-  .nav__links {
-    position: fixed;
-    inset: 0 0 0 30%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 26px;
-    padding: 90px 32px;
-    background: var(--color-dark);
-    transform: translateX(100%);
-    transition: transform var(--transition);
-  }
-  .nav__links a { color: #fff; font-size: 1.15rem; }
-  .nav__links.is-open { transform: translateX(0); }
-
-  .nav__toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .nav__toggle.is-open span:nth-child(2) { opacity: 0; }
-  .nav__toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  .nav__toggle.is-open span { background: #fff; }
 }
 
 /* Respektovat uživatele s omezením animací */
