@@ -315,6 +315,11 @@ button { font-family: inherit; cursor: pointer; }
   box-shadow: var(--shadow-soft);
 }
 .story__text p { color: var(--color-text-soft); }
+.story__ps {
+  font-family: var(--font-heading);
+  font-style: italic;
+  color: var(--color-rose);
+}
 
 @media (min-width: 800px) {
   .story {
