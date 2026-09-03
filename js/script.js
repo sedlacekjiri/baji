@@ -61,6 +61,11 @@
     });
   }
 
+  const gateVideo = document.getElementById("gate-video");
+  if (gateVideo) {
+    gateVideo.addEventListener("error", () => { gateVideo.style.display = "none"; });
+  }
+
   let alreadyUnlocked = false;
   try { alreadyUnlocked = sessionStorage.getItem(STORAGE_KEY) === "1"; } catch (e) {}
   if (alreadyUnlocked) {
