@@ -366,7 +366,10 @@ button { font-family: inherit; cursor: pointer; }
   align-items: center;
 }
 .story__photo {
-  aspect-ratio: 4/3;
+  aspect-ratio: 1091 / 2373;
+  max-width: 360px;
+  width: 100%;
+  margin: 0 auto;
   border-radius: var(--radius);
   background:
     url("../assets/img/story.jpg") center/cover no-repeat,
