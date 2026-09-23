@@ -3,7 +3,26 @@
 Jednoduchý, plně responzivní web v češtině pro Báru. Je to čisté HTML/CSS/JS
 bez frameworků a bez buildu — dá se nasadit prakticky kamkoliv jako statický web.
 
-## Struktura
+## Aktuální stav (v2)
+
+Úvodní stránka je teď jednoduchá: video `assets/video/hero2.mp4` na pozadí
+(převedené z `hero2.mov` — iPhone HDR video, které většina prohlížečů neumí
+přehrát) a uprostřed text „Zase ses zastavila na našem webu? / Možná ti trochu
+chybím. / Tak mi zavolej.“
+
+## Archiv — původní web (v1)
+
+Celý původní web (brána s otázkou na vydru, příběh, galerie, dopis, poslední
+otázka s telefonem) je beze změny uložený ve složce
+`archive/v1-puvodni-web/` a na webu běží dál na adrese
+`/archive/v1-puvodni-web/`. Fotky a video sdílí se složkou `assets/`.
+V gitu je také v commitu `64fb8ea` (resp. `a3ee1de`).
+
+Vrácení původní verze: stačí obsah `archive/v1-puvodni-web/` přesunout zpět
+do kořene (a cesty `../../assets/` změnit zpět na `assets/`) — nebo prostě
+napsat Claudovi „vrať web na verzi v1 z archivu“.
+
+## Struktura (v1, původní)
 
 ```
 index.html          hlavní (a jediná) stránka

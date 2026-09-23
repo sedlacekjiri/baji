@@ -8,201 +8,31 @@
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<noscript><style>.reveal{opacity:1!important;transform:none!important} #gate{display:none!important} #site{display:block!important}</style></noscript>
 </head>
 <body>
 
-<!-- ===================== BRÁNA S HESLEM ===================== -->
-<div id="gate" class="gate">
-  <div class="gate__bg" aria-hidden="true"></div>
-  <video
-    id="gate-video"
-    class="gate__video"
-    autoplay
-    muted
-    loop
-    playsinline
-    aria-hidden="true"
-  >
-    <source src="assets/video/hero.mp4" type="video/mp4">
-  </video>
-  <div class="gate__overlay" aria-hidden="true"></div>
-
-  <main class="gate__card" role="main">
-    <span class="gate__icon" aria-hidden="true">♥</span>
-    <h1 class="gate__title">Ahoj, Báro</h1>
-    <p class="gate__text">Než se podíváš dál, musíš zodpovědět jednu otázku.</p>
-
-    <form id="gate-form" class="gate__form" autocomplete="off" novalidate>
-      <label for="gate-answer" class="gate__question">
-        Které zvíře je v našem vztahu nejvíce připomínané?
-        <span class="gate__hint">(pes to není 😃)</span>
-      </label>
-      <input
-        type="text"
-        id="gate-answer"
-        name="answer"
-        class="gate__input"
-        placeholder="Tvoje odpověď…"
-        aria-describedby="gate-error"
-        required
-      >
-      <button type="submit" class="gate__button">Odemknout 🔓</button>
-      <p id="gate-error" class="gate__error" role="alert" aria-live="polite"></p>
-    </form>
-  </main>
-</div>
-
-<!-- ===================== HLAVNÍ WEB ===================== -->
-<div id="site" class="site" hidden>
-
-  <nav class="nav" id="nav">
-    <a href="#hero" class="nav__logo">Baji ♥</a>
-  </nav>
-
-  <!-- HERO S VIDEEM -->
-  <header id="hero" class="hero">
+  <main class="hero">
     <video
-      id="hero-video"
       class="hero__video"
       autoplay
       muted
       loop
       playsinline
-      poster="assets/img/couple.jpg"
+      preload="auto"
+      aria-hidden="true"
     >
-      <source src="assets/video/hero.mp4" type="video/mp4">
+      <source src="assets/video/hero2.mp4" type="video/mp4">
     </video>
     <div class="hero__overlay" aria-hidden="true"></div>
+
     <div class="hero__content">
-      <p class="hero__eyebrow">Pro tebe</p>
-      <h1 class="hero__title">Tohle je pro tebe,<br>Lásko B.</h1>
-      <p class="hero__subtitle">Láska, kterou spolu máme, je příliš vzácná na to, abychom o ni nebojovali.</p>
+      <p class="hero__line">Zase ses zastavila na našem webu?</p>
+      <p class="hero__line">Možná ti trochu chybím.</p>
+      <p class="hero__line hero__line--strong">Tak mi zavolej.</p>
     </div>
-  </header>
+  </main>
 
-  <!-- PŘÍBĚH -->
-  <section id="pribeh" class="story reveal">
-    <div class="story__photo" aria-hidden="true"></div>
-    <div class="story__text">
-      <p class="section__eyebrow">Náš příběh</p>
-      <h2 class="section__title">Takhle to celé začalo, vzpomínáš?</h2>
-      <p>
-        Setkali jsme se v Akureyri, pracovali jsme spolu a okamžitě jsem věděl,
-        že mezi námi je něco silného — jen jsem to ještě nedokázal uchopit. Na
-        ten náš společný smích v práci nikdy nezapomenu.
-      </p>
-      <p>
-        Po našem výletě na skútru jsem věděl, že se mi líbíš víc než jen jako
-        „kamarádka“. Na čas jsme se odloučili, ale ty sis mě zase našla — a
-        tohle ti nikdy nezapomenu. Za těch pár měsíců jsem zjistil, jak moc
-        jsi pro mě důležitá a že jinou ženu po mém boku nechci.
-      </p>
-      <p>
-        Pocit, který s tebou mám, se ani nedá popsat slovy. Cítím s tebou
-        naprostý klid a zen a nepřeji si nic jiného, než aby to pokračovalo
-        napořád. Udělám pro to maximum.
-      </p>
-      <p class="story__ps">P.S.: Připomíná ti něco tahle fotka? :)</p>
-    </div>
-  </section>
-
-  <!-- GALERIE -->
-  <section id="galerie" class="gallery reveal">
-    <p class="section__eyebrow center">Momenty</p>
-    <h2 class="section__title center">Naše chvíle</h2>
-    <div class="gallery__grid">
-      <figure class="gallery__item" style="--i:0">
-        <img class="gallery__media" src="assets/img/doupelasky.JPG" alt="">
-        <figcaption class="gallery__caption">Naše první doupě lásky</figcaption>
-      </figure>
-      <figure class="gallery__item" style="--i:1">
-        <img class="gallery__media" src="assets/img/sunset.jpg" alt="">
-        <figcaption class="gallery__caption">Náš první společný sunset</figcaption>
-      </figure>
-      <figure class="gallery__item" style="--i:2">
-        <img class="gallery__media" src="assets/img/horalka.JPG" alt="">
-        <figcaption class="gallery__caption">Moje horalka</figcaption>
-      </figure>
-      <figure class="gallery__item" style="--i:3">
-        <img class="gallery__media" src="assets/img/hotely.jpg" alt="">
-        <figcaption class="gallery__caption">Naše hotelové návštěvy</figcaption>
-      </figure>
-      <figure class="gallery__item" style="--i:4">
-        <img class="gallery__media" src="assets/img/houby.jpg" alt="">
-        <figcaption class="gallery__caption">První houbaření</figcaption>
-      </figure>
-      <figure class="gallery__item" style="--i:5">
-        <img class="gallery__media" src="assets/img/hovory.png" alt="">
-        <figcaption class="gallery__caption">Nekonečné telefonování a plánování budoucnosti</figcaption>
-      </figure>
-      <figure class="gallery__item" style="--i:6">
-        <img class="gallery__media" src="assets/img/kone.jpg" alt="">
-        <figcaption class="gallery__caption">Selfies s koňmi</figcaption>
-      </figure>
-      <figure class="gallery__item" style="--i:7">
-        <img class="gallery__media" src="assets/img/rameno.jpg" alt="">
-        <figcaption class="gallery__caption">Tvoje místo (navždy)</figcaption>
-      </figure>
-      <figure class="gallery__item" style="--i:8">
-        <img class="gallery__media" src="assets/img/rande.jpg" alt="">
-        <figcaption class="gallery__caption">Nejlepší rande ever?</figcaption>
-      </figure>
-      <figure class="gallery__item" style="--i:9">
-        <img class="gallery__media" src="assets/img/thorsmork.jpg" alt="">
-        <figcaption class="gallery__caption">Náš první výlet do highlands</figcaption>
-      </figure>
-      <figure class="gallery__item" style="--i:10">
-        <img class="gallery__media" src="assets/img/zen.JPG" alt="">
-        <figcaption class="gallery__caption">ZEN</figcaption>
-      </figure>
-      <figure class="gallery__item" style="--i:11">
-        <img class="gallery__media" src="assets/img/reunited.jpg" alt="">
-        <figcaption class="gallery__caption">Reunited</figcaption>
-      </figure>
-      <figure class="gallery__item gallery__item--end" style="--i:12">
-        <p class="gallery__end">To be continued…</p>
-      </figure>
-    </div>
-  </section>
-
-  <!-- DOPIS -->
-  <section id="dopis" class="letter reveal">
-    <div class="letter__card">
-      <p class="section__eyebrow center">Pár slov pro tebe</p>
-      <h2 class="section__title center">Milá Báro,</h2>
-      <p class="letter__body">
-        Chci ti říct, že se tě jen tak vzdát nemůžu. Vesmír nám už několikrát
-        ukázal, že jsme spřízněné duše, a já se s ním nechci přít :)
-      </p>
-      <p class="letter__body">
-        Je neuvěřitelné, jak rychle jsme se do sebe zamilovali a jaký
-        ohňostroj spolu zažíváme. Jsem vděčný za každou sekundu s tebou.
-      </p>
-      <p class="letter__body">
-        Vím, choval jsem se jako blbec, a moc se ti za to omlouvám. Všechno
-        jsem si uvědomil, a pokud mi dáš šanci, přesvědčím tě o tom. Moc mi
-        chybíš.
-      </p>
-      <p class="letter__signature">Miluju tě. ♥</p>
-    </div>
-  </section>
-
-  <!-- POSLEDNÍ OTÁZKA -->
-  <section id="otazka" class="finale reveal">
-    <p class="finale__question">Poslední otázka:<br>Chybím ti?</p>
-    <p class="finale__hint">Pokud ano, tak mi hned zavolej tady</p>
-    <a class="finale__call" href="tel:6262582">6262582</a>
-  </section>
-
-  <footer class="footer">
-    <p>Vytvořeno s láskou pro Báru ♥ <span id="year"></span></p>
-  </footer>
-
-</div>
-
-<script src="js/script.js"></script>
 </body>
 </html>
