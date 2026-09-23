@@ -18,6 +18,7 @@ body {
   justify-content: center;
   overflow: hidden;
   padding: 24px 16px;
+  background: #000 url("../assets/img/hero2-poster.jpg") center / cover no-repeat;
 }
 
 .hero__video {
