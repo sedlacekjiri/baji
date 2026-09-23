@@ -22,6 +22,7 @@
 
   <main class="hero">
     <video
+      id="hero-video"
       class="hero__video"
       autoplay
       muted
@@ -43,5 +44,33 @@
     </div>
   </main>
 
+<script>
+  (function () {
+    var video = document.getElementById("hero-video");
+    if (!video) return;
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+
+    var events = ["touchstart", "click", "scroll", "keydown"];
+    function tryPlay() {
+      var p = video.play();
+      if (p && p.then) {
+        p.then(stopListening, function () {});
+      }
+    }
+    function stopListening() {
+      events.forEach(function (e) { window.removeEventListener(e, tryPlay); });
+    }
+
+    // Autoplay can be blocked (e.g. iPhone Low Power Mode) – start on first touch/scroll instead.
+    events.forEach(function (e) { window.addEventListener(e, tryPlay, { passive: true }); });
+    tryPlay();
+    video.addEventListener("canplay", tryPlay, { once: true });
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden && video.paused) tryPlay();
+    });
+  })();
+</script>
 </body>
 </html>

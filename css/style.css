@@ -29,6 +29,14 @@ body {
   object-fit: cover;
 }
 
+/* Hide the native play button iOS/Android show when autoplay is blocked */
+.hero__video::-webkit-media-controls,
+.hero__video::-webkit-media-controls-start-playback-button,
+.hero__video::-webkit-media-controls-overlay-play-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
 .hero__overlay {
   position: absolute;
   inset: 0;
