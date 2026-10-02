@@ -3,26 +3,25 @@
 Jednoduchý, plně responzivní web v češtině pro Báru. Je to čisté HTML/CSS/JS
 bez frameworků a bez buildu — dá se nasadit prakticky kamkoliv jako statický web.
 
-## Aktuální stav (v2)
+## Aktuální stav (v1 — vrácený původní web)
 
-Úvodní stránka je teď jednoduchá: video `assets/video/hero2.mp4` na pozadí
-(převedené z `hero2.mov` — iPhone HDR video, které většina prohlížečů neumí
-přehrát) a uprostřed text „Zase ses zastavila na našem webu? / Možná ti trochu
-chybím. / Tak mi zavolej.“
+Na hlavní stránce zase běží původní web: brána s otázkou na vydru, příběh,
+galerie, dopis a poslední otázka s telefonem. Je to přesně verze z commitu
+`64fb8ea`, jen s doplněnou analytikou Plausible.
 
-## Archiv — původní web (v1)
+## Archiv — video se vzkazem (v2)
 
-Celý původní web (brána s otázkou na vydru, příběh, galerie, dopis, poslední
-otázka s telefonem) je beze změny uložený ve složce
-`archive/v1-puvodni-web/` a na webu běží dál na adrese
-`/archive/v1-puvodni-web/`. Fotky a video sdílí se složkou `assets/`.
-V gitu je také v commitu `64fb8ea` (resp. `a3ee1de`).
+Jednoduchá verze s videem `assets/video/hero2.mp4` (na mobilu
+`hero2-mobile.mp4`) na pozadí a textem „Zase ses zastavila na našem webu? /
+Možná ti trochu chybím, možná mě trochu miluješ. / Tak mi zavolej.“ je uložená
+ve složce `archive/v2-video-vzkaz/` a na webu běží dál na adrese
+`/archive/v2-video-vzkaz/`. Fotky a video sdílí se složkou `assets/`.
 
-Vrácení původní verze: stačí obsah `archive/v1-puvodni-web/` přesunout zpět
-do kořene (a cesty `../../assets/` změnit zpět na `assets/`) — nebo prostě
-napsat Claudovi „vrať web na verzi v1 z archivu“.
+Vrácení v2: obsah `archive/v2-video-vzkaz/` přesunout zpět do kořene (cesty
+`../../assets/` změnit na `assets/`, v CSS `../../../assets/` na
+`../assets/`) — nebo napsat Claudovi „vrať web na verzi v2 z archivu“.
 
-## Struktura (v1, původní)
+## Struktura (v1)
 
 ```
 index.html          hlavní (a jediná) stránka
