@@ -9,6 +9,20 @@ Na hlavní stránce zase běží původní web: brána s otázkou na vydru, př�
 galerie, dopis a poslední otázka s telefonem. Je to přesně verze z commitu
 `64fb8ea`, jen s doplněnou analytikou Plausible.
 
+## Hot Pick (Spotify)
+
+Pod textem na videu je karta „🔥 Hot Pick“ s přehrávačem ze Spotify. Písničku
+změníš v `index.html` v atributu `data-spotify-track` u `<div id="hotpick">` —
+stačí tam vložit celý odkaz ze Spotify (Sdílet → Kopírovat odkaz na skladbu)
+nebo jen ID skladby. Prázdná hodnota kartu schová.
+
+## Video — rychlý start
+
+Na mobilu (do 900 px) se načítá zmenšené `assets/video/hero-mobile.mp4`
+(~0,5 MB), jinak `hero.mp4`. Dokud se video nenačte, je vidět náhled
+`assets/img/hero-poster.jpg`. Pokud prohlížeč zablokuje autoplay (např. iPhone
+v úsporném režimu), video se spustí hned při prvním dotyku/scrollu.
+
 ## Archiv — video se vzkazem (v2)
 
 Jednoduchá verze s videem `assets/video/hero2.mp4` (na mobilu

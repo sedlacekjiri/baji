@@ -9,6 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/hero-poster.jpg">
+<link rel="preconnect" href="https://open.spotify.com">
 <link rel="stylesheet" href="css/style.css">
 <noscript><style>.reveal{opacity:1!important;transform:none!important} #gate{display:none!important} #site{display:block!important}</style></noscript>
 <!-- Privacy-friendly analytics by Plausible -->
@@ -30,9 +32,12 @@
     muted
     loop
     playsinline
+    preload="auto"
+    data-src="assets/video/hero.mp4"
+    data-src-mobile="assets/video/hero-mobile.mp4"
+    poster="assets/img/hero-poster.jpg"
     aria-hidden="true"
   >
-    <source src="assets/video/hero.mp4" type="video/mp4">
   </video>
   <div class="gate__overlay" aria-hidden="true"></div>
 
@@ -77,15 +82,23 @@
       muted
       loop
       playsinline
-      poster="assets/img/couple.jpg"
+      preload="auto"
+      data-src="assets/video/hero.mp4"
+      data-src-mobile="assets/video/hero-mobile.mp4"
+      poster="assets/img/hero-poster.jpg"
     >
-      <source src="assets/video/hero.mp4" type="video/mp4">
     </video>
     <div class="hero__overlay" aria-hidden="true"></div>
     <div class="hero__content">
       <p class="hero__eyebrow">Pro tebe</p>
       <h1 class="hero__title">Tohle je pro tebe,<br>Lásko B.</h1>
       <p class="hero__subtitle">Láska, kterou spolu máme, je příliš vzácná na to, abychom o ni nebojovali.</p>
+
+      <!-- HOT PICK (Spotify) – písničku změníš v atributu data-spotify-track -->
+      <div class="hotpick" id="hotpick" data-spotify-track="0tgVpDi06FyKpA1z0VMD4v">
+        <p class="hotpick__label"><span aria-hidden="true">🔥</span> Hot Pick</p>
+        <div class="hotpick__player"></div>
+      </div>
     </div>
   </header>
 
