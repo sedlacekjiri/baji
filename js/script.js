@@ -36,6 +36,8 @@
     }
     setTimeout(() => { gate.remove(); }, 700);
     initSiteInteractions();
+    if (heroVideo) keepPlaying(heroVideo);
+    initHotPick();
   }
 
   function handleWrongAnswer() {
@@ -71,11 +73,71 @@
     }
   }
 
+  // Autoplay can be blocked (e.g. iPhone Low Power Mode) – start the video
+  // on the first touch/scroll/tap instead of waiting.
+  // Smaller video on phones so it starts almost immediately.
+  function pickSource(video) {
+    const small = window.matchMedia("(max-width: 900px)").matches;
+    const src = (small && video.dataset.srcMobile) || video.dataset.src;
+    if (src && !video.getAttribute("src")) video.src = src;
+  }
+
+  function keepPlaying(video) {
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+
+    const events = ["touchstart", "click", "scroll", "keydown"];
+    const stopListening = () => {
+      events.forEach((e) => window.removeEventListener(e, tryPlay));
+    };
+    function tryPlay() {
+      if (!video.isConnected) return stopListening();
+      const p = video.play();
+      if (p && p.then) p.then(stopListening, () => {});
+    }
+
+    events.forEach((e) => window.addEventListener(e, tryPlay, { passive: true }));
+    tryPlay();
+    video.addEventListener("canplay", tryPlay, { once: true });
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden && video.paused) tryPlay();
+    });
+  }
+
+  let hotPickReady = false;
+  function initHotPick() {
+    const box = document.getElementById("hotpick");
+    if (!box || hotPickReady) return;
+    hotPickReady = true;
+    // Accepts a bare track ID or a full open.spotify.com/track/... link
+    const raw = (box.dataset.spotifyTrack || "").trim();
+    const match = raw.match(/track[/:]([A-Za-z0-9]+)/);
+    const trackId = match ? match[1] : raw;
+    if (!/^[A-Za-z0-9]{10,}$/.test(trackId)) {
+      box.hidden = true;
+      return;
+    }
+    const iframe = document.createElement("iframe");
+    iframe.src = "https://open.spotify.com/embed/track/" + trackId + "?utm_source=generator&theme=0";
+    iframe.title = "Hot Pick – Spotify";
+    iframe.loading = "lazy";
+    iframe.allow = "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture";
+    box.querySelector(".hotpick__player").appendChild(iframe);
+  }
+
   const gateVideo = document.getElementById("gate-video");
-  if (gateVideo) hideOnLoadFailure(gateVideo);
+  if (gateVideo) {
+    pickSource(gateVideo);
+    hideOnLoadFailure(gateVideo);
+    keepPlaying(gateVideo);
+  }
 
   const heroVideo = document.getElementById("hero-video");
-  if (heroVideo) hideOnLoadFailure(heroVideo);
+  if (heroVideo) {
+    pickSource(heroVideo);
+    hideOnLoadFailure(heroVideo);
+  }
 
   document.querySelectorAll(".gallery__media").forEach(hideOnLoadFailure);
 

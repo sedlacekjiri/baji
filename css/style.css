@@ -87,7 +87,7 @@ button { font-family: inherit; cursor: pointer; }
   position: absolute;
   inset: 0;
   background:
-    url("../assets/img/couple.jpg") center/cover no-repeat,
+    url("../assets/img/hero-poster.jpg") center/cover no-repeat,
     linear-gradient(135deg, #f2b6c6 0%, #d68fa0 45%, #7a4a58 100%);
   filter: saturate(1.05);
 }
@@ -244,13 +244,14 @@ button { font-family: inherit; cursor: pointer; }
    ========================================================== */
 .hero {
   position: relative;
-  height: 100svh;
   min-height: 480px;
+  min-height: max(100svh, 480px);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: linear-gradient(135deg, #f2b6c6, #7a4a58);
+  background: url("../assets/img/hero-poster.jpg") center/cover no-repeat,
+    linear-gradient(135deg, #f2b6c6, #7a4a58);
 }
 .hero__video {
   position: absolute;
@@ -268,7 +269,7 @@ button { font-family: inherit; cursor: pointer; }
   position: relative;
   text-align: center;
   color: #fff;
-  padding: 0 20px;
+  padding: 90px 20px 40px;
 }
 .hero__eyebrow {
   text-transform: uppercase;
@@ -289,6 +290,66 @@ button { font-family: inherit; cursor: pointer; }
   opacity: 0.92;
   max-width: 32ch;
   margin: 0 auto;
+}
+/* Native play button overlay on iOS when autoplay is blocked */
+.gate__video::-webkit-media-controls,
+.hero__video::-webkit-media-controls,
+.gate__video::-webkit-media-controls-start-playback-button,
+.hero__video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+/* Hot Pick – Spotify přehrávač pod textem */
+.hotpick {
+  width: min(360px, 100%);
+  margin: 28px auto 0;
+  padding: 12px 12px 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transform: translateY(12px);
+  animation: hotpick-in 0.8s ease 0.6s forwards;
+}
+.hotpick[hidden] { display: none; }
+.hotpick__label {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 10px;
+  color: #fff;
+}
+.hotpick__label span {
+  display: inline-block;
+  animation: hotpick-flame 1.6s ease-in-out infinite;
+}
+.hotpick__player {
+  height: 80px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.25);
+}
+.hotpick__player iframe {
+  display: block;
+  width: 100%;
+  height: 80px;
+  border: 0;
+}
+@keyframes hotpick-in {
+  to { opacity: 1; transform: none; }
+}
+@keyframes hotpick-flame {
+  0%, 100% { transform: scale(1) rotate(0); }
+  50% { transform: scale(1.15) rotate(-6deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hotpick { animation: none; opacity: 1; transform: none; }
+  .hotpick__label span { animation: none; }
 }
 
 /* ==========================================================
