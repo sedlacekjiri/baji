@@ -3,12 +3,12 @@
 Jednoduchý, plně responzivní web v češtině pro Báru. Je to čisté HTML/CSS/JS
 bez frameworků a bez buildu — dá se nasadit prakticky kamkoliv jako statický web.
 
-## Aktuální stav (v3 — minimalistická černobílá)
+## Aktuální stav (v3 — minimalistická, fotka + věta)
 
-Hlavní stránka je teď minimalistická, celá černobílá: brána s otázkou na
-vydru (zůstává) a po odemčení jen jedna fotka (`assets/img/my.jpg`) a krátký
-text pod ní. Text změníš v `index.html` v sekci `<section class="words">`
-(oslovení, hlavní věta a jeden řádek pod ní). Na mobilu se fotka ořízne na
+Hlavní stránka je teď minimalistická: světlé pozadí, černé písmo, brána
+s otázkou na vydru (zůstává) a po odemčení jen černobílá fotka
+(`assets/img/my.jpg`) a jedna věta pod ní. Větu změníš v `index.html`
+v sekci `<section class="words">`. Na mobilu se fotka ořízne na
 výšku tak, aby byl vidět hlavně pár.
 
 ## Archiv — původní web (v1)
