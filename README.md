@@ -3,25 +3,19 @@
 Jednoduchý, plně responzivní web v češtině pro Báru. Je to čisté HTML/CSS/JS
 bez frameworků a bez buildu — dá se nasadit prakticky kamkoliv jako statický web.
 
-## Aktuální stav (v1 — vrácený původní web)
+## Aktuální stav (v3 — minimalistická, fotka + věta)
 
-Na hlavní stránce zase běží původní web: brána s otázkou na vydru, příběh,
-galerie, dopis a poslední otázka s telefonem. Je to přesně verze z commitu
-`64fb8ea`, jen s doplněnou analytikou Plausible.
+Hlavní stránka je teď minimalistická: světlé pozadí, černé písmo, brána
+s otázkou na vydru (zůstává) a po odemčení jen černobílá fotka
+(`assets/img/my.jpg`) a jedna věta pod ní. Větu změníš v `index.html`
+v sekci `<section class="words">`. Na mobilu se fotka ořízne na
+výšku tak, aby byl vidět hlavně pár.
 
-## Hot Pick (Spotify)
+## Archiv — původní web (v1)
 
-Pod textem na videu je karta „🔥 Hot Pick“ s přehrávačem ze Spotify. Písničku
-změníš v `index.html` v atributu `data-spotify-track` u `<div id="hotpick">` —
-stačí tam vložit celý odkaz ze Spotify (Sdílet → Kopírovat odkaz na skladbu)
-nebo jen ID skladby. Prázdná hodnota kartu schová.
-
-## Video — rychlý start
-
-Na mobilu (do 900 px) se načítá zmenšené `assets/video/hero-mobile.mp4`
-(~0,5 MB), jinak `hero.mp4`. Dokud se video nenačte, je vidět náhled
-`assets/img/hero-poster.jpg`. Pokud prohlížeč zablokuje autoplay (např. iPhone
-v úsporném režimu), video se spustí hned při prvním dotyku/scrollu.
+Původní web (příběh, galerie, dopis, Hot Pick ze Spotify, video) je uložený
+ve složce `archive/v1-puvodni/` a běží na adrese `/archive/v1-puvodni/`
+(taky za heslem „vydra“). Fotky a videa sdílí se složkou `assets/`.
 
 ## Archiv — video se vzkazem (v2)
 
