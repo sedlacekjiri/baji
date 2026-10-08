@@ -29,6 +29,7 @@
 
   function unlock(remember) {
     gate.classList.add("is-unlocked");
+    if (window.bajiTrack) window.bajiTrack("unlock");
     site.hidden = false;
     document.body.style.overflow = "";
     if (remember) {

@@ -11,6 +11,34 @@ s otázkou na vydru (zůstává) a po odemčení jen černobílá fotka
 v sekci `<section class="words">`. Na mobilu se fotka ořízne na
 výšku tak, aby byl vidět hlavně pár.
 
+## Vlastní analytika (baji.cz/stats)
+
+Malý vlastní nástroj místo Plausible: Netlify Functions + Netlify Blobs
+(úložiště přímo v Netlify, nic dalšího se nezakládá ani neplatí).
+
+- `js/t.js` — měřicí skript na všech stránkách (hlavní i archiv). Posílá:
+  stránku, odkud člověk přišel, jazyk, velikost displeje a **dobu, kdy byla
+  stránka opravdu vidět** (každých 15 s + při zavření). Zaznamená i to, jestli
+  zadal/a správné heslo.
+- `netlify/functions/hit.mjs` — přijímá data, doplní město/zemi (z Netlify,
+  podle IP — samotná IP se **neukládá**) a zařízení/prohlížeč (včetně
+  Instagramu/Messengeru, když se odkaz otevře v aplikaci).
+- `netlify/functions/stats.mjs` + `stats/index.html` — přehled na
+  **baji.cz/stats/**, chráněný heslem.
+
+**Jednorázové nastavení:** na Netlify → Site configuration → Environment
+variables přidej proměnnou `STATS_KEY` (libovolné heslo ke statistikám) a
+spusť nový deploy. Pak otevři baji.cz/stats/ a zadej to heslo.
+
+Prohlížeč, ze kterého se přihlásíš do statistik, se automaticky přestane
+měřit (aby tvoje vlastní návštěvy nekazily čísla) — přepíná se tlačítkem
+„Neměřit tento prohlížeč“. Kdo je kdo se z principu nepozná jménem — každý
+prohlížeč dostane náhodné označení („návštěvník B8O7“), takže je vidět, když
+se stejný člověk vrací.
+
+Plausible je zatím na hlavní stránce pořád zapojené vedle toho; až budeš
+spokojený, stačí smazat jeho dva `<script>` v `index.html`.
+
 ## Archiv — původní web (v1)
 
 Původní web (příběh, galerie, dopis, Hot Pick ze Spotify, video) je uložený
