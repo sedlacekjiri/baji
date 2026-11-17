@@ -116,6 +116,9 @@ html, body {
   margin: 1.8em 0 0;
   font-weight: 500;
 }
+.words .words__sign {
+  margin: 0.4em 0 0;
+}
 
 .song {
   width: 100%;
