@@ -1,150 +1,19 @@
 :root {
   --bg: #f4f3f0;
-  --fg: #141414;
   --muted: #7a7a7a;
-  --line: #c9c7c2;
-  --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
-
-*, *::before, *::after { box-sizing: border-box; }
 
 html, body {
   margin: 0;
   background: var(--bg);
-  color: var(--fg);
-  font-family: var(--sans);
-  font-weight: 300;
-  -webkit-font-smoothing: antialiased;
-}
-
-[hidden] { display: none !important; }
-
-/* ===================== BRÁNA ===================== */
-.gate {
-  position: fixed;
-  inset: 0;
-  z-index: 10;
-  display: grid;
-  place-items: center;
-  padding: 24px 16px;
-  background: var(--bg);
-  transition: opacity 0.8s ease;
-}
-.gate.is-unlocked { opacity: 0; pointer-events: none; }
-
-.gate__card {
-  width: 100%;
-  max-width: 360px;
-  text-align: center;
-}
-.gate__form { display: flex; flex-direction: column; gap: 20px; }
-.gate__question {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-.gate__input {
-  width: 100%;
-  padding: 10px 0;
-  border: 0;
-  border-bottom: 1px solid var(--line);
-  border-radius: 0;
-  background: transparent;
-  color: var(--fg);
-  font: inherit;
-  font-size: 1.05rem;
-  text-align: center;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-.gate__input::placeholder { color: #aaa; }
-.gate__input:focus { border-color: var(--fg); }
-.gate__button {
-  align-self: center;
-  margin-top: 8px;
-  padding: 12px 28px;
-  border: 1px solid var(--fg);
-  border-radius: 0;
-  background: transparent;
-  color: var(--fg);
-  font: inherit;
-  font-size: 0.75rem;
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-.gate__button:hover,
-.gate__button:focus-visible { background: var(--fg); color: var(--bg); }
-.gate__error {
-  min-height: 1.4em;
-  margin: 0;
-  font-size: 0.85rem;
   color: var(--muted);
-}
-.gate__card.is-shaking { animation: shake 0.4s ease; }
-@keyframes shake {
-  20%, 60% { transform: translateX(-6px); }
-  40%, 80% { transform: translateX(6px); }
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
-/* ===================== HLAVNÍ STRÁNKA ===================== */
-.site {
+.blank {
   min-height: 100vh;
   min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(28px, 5vh, 48px);
-  padding: clamp(24px, 6vh, 64px) 16px;
-}
-
-.words {
-  width: 100%;
-  max-width: 640px;
-  opacity: 0;
-  animation: rise 1.4s ease 0.2s forwards;
-}
-.words p {
-  margin: 0 0 1.1em;
-  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
-  line-height: 1.6;
-  letter-spacing: -0.01em;
-}
-.words .words__bye {
-  margin: 1.8em 0 0;
-  font-weight: 500;
-}
-.words .words__sign {
-  margin: 0.4em 0 0;
-}
-.words .words__ps {
-  margin: 2.4em 0 0;
-  font-size: 0.95rem;
-  color: var(--muted);
-}
-
-.song {
-  width: 100%;
-  max-width: 640px;
-  opacity: 0;
-  animation: rise 1.4s ease 1s forwards;
-}
-.song iframe {
-  display: block;
-  border: 0;
-  border-radius: 12px;
-}
-
-@keyframes rise {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .words, .song {
-    animation: none;
-    opacity: 1;
-  }
+  display: grid;
+  place-items: center;
+  font-size: 1.25rem;
 }
